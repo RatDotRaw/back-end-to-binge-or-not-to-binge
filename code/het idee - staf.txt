@@ -1,0 +1,23 @@
+# unieke invalshoek
+een platform voor mensen die van creepy pastas willen kijken
+
+# unique selling point
+**Creepy pasta van de dag**: elke dag word er een video gekozen en in de spotlights gezet.
+**Creepy meter**: users kunnen video's een creepy score geven en later ook gebruiken om video's te
+
+# features
+basic login systeem
+profielpagina:
+[x] - naam en bio aanpassen
+[ ] - video geschiedenis
+
+video pagina:
+[x] - creepy meter
+[x] - episode selection
+[ ] - comment section???
+
+homepage:
+[ ] - zoekbalk en filters
+[ ] - random video button
+[x] - creepy pasta van de dag
+[x] - popular sectie
