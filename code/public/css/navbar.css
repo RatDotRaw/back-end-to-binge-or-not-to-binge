@@ -1,0 +1,20 @@
+nav {
+    display: flex;
+    flex-direction: row;
+
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem;
+}
+nav .grow {
+    flex-grow: 1;
+}
+nav a {
+    color: #000000;
+    font-weight: 800;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+nav a:hover {
+    color: #ffcc00;
+}

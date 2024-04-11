@@ -2,6 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <p>{{ Auth::id() }}</p>
     <a class="navbar-brand" href="{{ route('home') }}">Home</a>
+    <div class="grow"></div>
     @if(Auth::check())
         <a class="nav-link" href="{{ route('users.logout') }}">Logout</a>
         {{-- link to own profile --}}

@@ -2,27 +2,33 @@
 @section('title', 'videoPlayer')
 @section('content')
     <div class="container">
-        {!! $video->url !!}
+        <div class="showcase">
+            {!! $video->url !!}
+        </div>
+
         <h1>{{ $video->title }}</h1>
         <p>{{ $video->description }}</p>
         <p>{{ $video->created_at }}</p>
         <p>{{ $video->views }}</p>
-        <div>
+        <div class="align-vertically">
             <p>spooky meter:</p>
             <progress value="{{ $video->likes }}" max="{{ $video->likes + $video->dislikes }}"></progress>
         </div>
-        <form action="{{ route('video.likeAction') }}" method="post">
-            @csrf
-            <input type="hidden" name="action" value="like">
-            <input type="hidden" name="video_id" value="{{ $video->id }}">
-            <button type="submit">very spooky</button>
-        </form>
-        <form action="{{ route('video.likeAction') }}" method="post">
-            @csrf
-            <input type="hidden" name="action" value="dislike">
-            <input type="hidden" name="video_id" value="{{ $video->id }}">
-            <button type="submit">not spooky</button>
-        </form>
+        <div class="align-vertically">
+            <form action="{{ route('video.likeAction') }}" method="post">
+                @csrf
+                <input type="hidden" name="action" value="like">
+                <input type="hidden" name="video_id" value="{{ $video->id }}">
+                <button type="submit">very spooky</button>
+            </form>
+            <form  action="{{ route('video.likeAction') }}" method="post">
+                @csrf
+                <input type="hidden" name="action" value="dislike">
+                <input type="hidden" name="video_id" value="{{ $video->id }}">
+                <button type="submit">not spooky</button>
+            </form>
+        </div>
+
         <hr>
         {{-- if there is a next_video_id --}}
         @if( $nextVideo )

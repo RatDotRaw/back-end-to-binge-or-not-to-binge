@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'index'])->name('home');
 
 // register routes
 Route::get('register', function () {
@@ -21,7 +19,6 @@ Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->n
 Route::get('profile/{id}', [\App\Http\Controllers\UserController::class, 'profile'])->name('users.profile');
 Route::post('profile/edit', [\App\Http\Controllers\UserController::class, 'editProfile'])->name('user.update');
 
-Route::get('home', [\App\Http\Controllers\HomepageController::class, 'index'])->name('home');
 Route::get('video/{id}', [\App\Http\Controllers\VideoController::class, 'show'])->name('video.show');
 Route::post('video/like', [\App\Http\Controllers\VideoController::class, 'likeAction'])->name('video.likeAction');
 

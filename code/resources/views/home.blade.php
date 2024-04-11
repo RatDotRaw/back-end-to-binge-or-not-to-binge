@@ -4,25 +4,31 @@
     @if (session('error'))
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
-    <div class="container">
+    <div class="showcase">
         <h1>HOME</h1>
+        <h1>daily spotlight!</h1>
+        <a href="{{ route('video.show', ['id' => $dailyVideo->id]) }}">
+            {!! $dailyVideo->url !!}
+            <h1>{{ $dailyVideo->title }}</h1>
+        </a>
+
     </div>
-    <h1>daily spotlight!</h1>
-    {!! $dailyVideo->url !!}
     <hr>
     <div class="container">
         <h1>random videos for you to pick and watch</h1>
-        <div class="row">
+        <div class="tiler">
             @foreach($randomVideos as $video)
-                <div class="col-4">
+                <div class="box">
                     <a href="{{ route('video.show', ['id' => $video->id]) }}">
                         {!! $video->url !!}
-                        <h1>{{ $video->title }}</h1>
-                        <p>{{ $video->description }}</p>
-                        <p>{{ $video->created_at }}</p>
                         <div>
-                            <p>spooky meter:</p>
-                            <progress value="{{ $video->likes }}" max="{{ $video->likes + $video->dislikes }}"></progress>
+                            <p class="title">{{ $video->title }}</p>
+                            <p>{{ $video->description }}</p>
+                            <p>{{ $video->created_at }}</p>
+                            <div class="align-vertically">
+                                <p>spooky meter:</p>
+                                <progress value="{{ $video->likes }}" max="{{ $video->likes + $video->dislikes }}"></progress>
+                            </div>
                         </div>
                     </a>
                 </div>
