@@ -5,9 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomepageController::class, 'index'])->name('home');
 
 // register routes
-Route::get('register', function () {
-    return view('users.register');
-})->name('users.register');
+Route::get('register', function () { return view('users.register'); })->name('users.register');
 Route::post('register', [\App\Http\Controllers\AuthController::class, 'store'])->name('users.register.store');
 
 // user routes
@@ -20,6 +18,7 @@ Route::get('profile/{id}', [\App\Http\Controllers\UserController::class, 'profil
 Route::post('profile/edit', [\App\Http\Controllers\UserController::class, 'editProfile'])->name('user.update');
 
 Route::get('video/{id}', [\App\Http\Controllers\VideoController::class, 'show'])->name('video.show');
+Route::get('random', [\App\Http\Controllers\VideoController::class, 'randomRedirect'])->name('video.random');
 Route::post('video/like', [\App\Http\Controllers\VideoController::class, 'likeAction'])->name('video.likeAction');
 
 Route::get('history', [\App\Http\Controllers\UserController::class, 'history'])->name('users.history');

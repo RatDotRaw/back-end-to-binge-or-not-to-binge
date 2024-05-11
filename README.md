@@ -14,7 +14,7 @@ video pagina:
 
 homepage:
 - [ ] - zoekbalk en filters
-- [ ] - random video button
+- [x] - random video button
 - [x] - creepy pasta van de dag
 - [x] - popular sectie
 

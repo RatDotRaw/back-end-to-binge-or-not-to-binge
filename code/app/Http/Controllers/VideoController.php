@@ -13,6 +13,11 @@ class VideoController extends Controller
     function makeIframe($url) {
         return '<iframe width="560" height="315" src="'. $url .'" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
     }
+    function randomRedirect()
+    {
+        $randomVideo = $this->randomVideo()->id;
+        return redirect()->route('video.show', ['id' => $randomVideo]);
+    }
     function randomVideo()
     {
         $randomVideo = Video::All()->random();
@@ -35,7 +40,7 @@ class VideoController extends Controller
         $video = Video::find($id);
 
         if (!$video) {
-            return redirect()->route('home')->with('error', 'Video not found');
+            return redirect()->route('home')->with('error', 'Video not found with id: '. $id);
         }
 
         // check if user is logged in
