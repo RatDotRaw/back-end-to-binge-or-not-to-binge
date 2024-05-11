@@ -1,16 +1,18 @@
 @extends('layouts.app')
 @section('title', 'My profile')
 @section('content')
-    <h1>{{ $user->name }}</h1>
-    <p>bio:</p>
-    <p>{{ $user->bio }}</p>
+    <h1>username: {{ $user->name }}</h1>
+    <div class="box">
+        <p>bio:</p>
+        <p>{{ $user->bio }}</p>
+    </div>
 
     {{-- if the user id is the same as the authenticated user id --}}
     @if( $user->id === Auth::id() )
         <hr>
-        <form action="{{ route('user.update') }}" method="post">
+        <form class="box" action="{{ route('user.update') }}" method="post">
             @csrf
-            <p>update profile?</p>
+            <h1>update profile shenanigans</h1>
             <input type="hidden" name="id" value="{{ $user->id }}">
             <label for="name">name:</label>
             <input type="text" name="name" value="{{ $user->name }}"><br>
