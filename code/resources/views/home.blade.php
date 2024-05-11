@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Register')
+@section('title', 'Home')
 @section('content')
     @if (session('error'))
         <div class="alert alert-danger">{{ session('error') }}</div>

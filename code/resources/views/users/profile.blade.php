@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'My profile')
+@section('title', 'profile')
 @section('content')
     <h1>username: {{ $user->name }}</h1>
     <div class="box">
