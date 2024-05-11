@@ -45,7 +45,7 @@ iframe {
 
 .box {
     width: 570px;
-    height: 500px;
+    /*height: 500px;*/
     color: #000000;
     flex-direction: column;
     background-color: #f1f1f1;

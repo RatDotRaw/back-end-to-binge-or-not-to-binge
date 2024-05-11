@@ -5,10 +5,12 @@
         <h1>History</h1>
         <div class="row">
             @foreach($history as $video)
-                <div class="col-4">
+                <div class="box">
                     <a href="{{ route('video.show', ['id' => $video->id]) }}">
-                        <p>{{ $video->title }}</p>
-                        <div>
+                        <p class="title">{{ $video->title }}</p>
+                        <p>{{ $video->description }}</p>
+                        <p>{{ $video->created_at }}</p>
+                        <div class="align-vertically">
                             <p>spooky meter:</p>
                             <progress value="{{ $video->likes }}" max="{{ $video->likes + $video->dislikes }}"></progress>
                         </div>
