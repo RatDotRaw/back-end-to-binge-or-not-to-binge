@@ -28,26 +28,6 @@
                 <button type="submit">not spooky</button>
             </form>
         </div>
-
-        <hr>
-        {{-- if there is a next_video_id --}}
-        @if( $nextVideo )
-            <p>Next video:</p>
-            {{-- link to the next video --}}
-            <a href="{{ route('video.show', ['id' => $video->next_video_id]) }}">
-                {{ $nextVideo->title }}
-            </a>
-            <hr>
-        @endif
-        {{-- if there is a previous_video_id --}}
-        @if( $previousVideo )
-            <p>Previous video:</p>
-            {{-- link to the previous video --}}
-            <a href="{{ route('video.show', ['id' => $previousVideo->id]) }}">
-                {{ $previousVideo->title }}
-            </a>
-            <hr>
-        @endif
         <hr>
         <h1>More video's for you to watch</h1>
         @foreach($randomVideos as $video)

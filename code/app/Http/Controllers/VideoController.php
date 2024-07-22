@@ -64,19 +64,10 @@ class VideoController extends Controller
 
         $video->url = $this->makeIframe($video->url);
 
-        // get next video information
-        $nextVideo = Video::find($video->next_video_id);
-        if ($nextVideo) {
-            $nextVideo->url = $this->makeIframe($nextVideo->url);
-        }
-
-        // get previous video information
-        $previousVideo = Video::where('next_video_id', $video->id)->first();
-
         // get random video's
         $randomVideos = $this->randomVideos(10);
 
-        return view('videoPlayer', ['video' => $video, 'nextVideo' => $nextVideo, 'previousVideo' => $previousVideo, 'randomVideos' => $randomVideos]);
+        return view('videoPlayer', ['video' => $video, 'randomVideos' => $randomVideos]);
     }
 
     function getDailyVideo() {

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('url');
             $table->text('description');
 //            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('next_video_id')->nullable();
             $table->integer('views')->default(0);
             $table->integer('likes')->default(0);
             $table->integer('dislikes')->default(0);
