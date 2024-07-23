@@ -22,3 +22,9 @@ Route::get('random', [\App\Http\Controllers\VideoController::class, 'randomRedir
 Route::post('video/like', [\App\Http\Controllers\VideoController::class, 'likeAction'])->name('video.likeAction');
 
 Route::get('history', [\App\Http\Controllers\UserController::class, 'history'])->name('users.history');
+
+// notes routes
+Route::get('notes', [\App\Http\Controllers\NoteController::class, 'index'])->name('note.index');
+Route::post('note/save', [\App\Http\Controllers\NoteController::class, 'save'])->name('note.saveNote');
+Route::post('note/delete', [\App\Http\Controllers\NoteController::class, 'delete'])->name('note.deleteNote');
+Route::post('note/update', [\App\Http\Controllers\NoteController::class, 'update'])->name('note.updateNote');

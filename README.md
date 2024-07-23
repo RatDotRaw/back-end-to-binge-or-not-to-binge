@@ -51,7 +51,7 @@ homepage:
 # Sources & documentation: 
 - https://laravel.com/docs/11.x
 - lesson materials
-- ..?
+- https://stackoverflow.com/questions/32485581/php-nested-loop-break-inner-loops-and-continue-the-main-loop
 
 ---
 

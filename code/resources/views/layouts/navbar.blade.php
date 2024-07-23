@@ -10,6 +10,8 @@
         <a class="nav-link" href="{{ route('users.profile', ['id' => Auth::id()]) }}">Profile</a>
         {{-- link to history --}}
         <a class="nav-link" href="{{ route('users.history') }}">History</a>
+        {{-- link to own notes --}}
+        <a class="nav-link" href="{{ route('note.index') }}">Notes</a>
     @else
         <a class="nav-link" href="{{ route('users.login') }}">Login</a>
         <a class="nav-link" href="{{ route('users.register') }}">Register</a>
