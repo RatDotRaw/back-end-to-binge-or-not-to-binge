@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DailyVideo;
+use App\Models\Notes;
 use App\Models\User;
 use App\Models\Video;
 use App\Models\VideoHistory;
@@ -63,7 +64,7 @@ class VideoController extends Controller
         $notes = [];
         if ($user) {
             // get all notes for this video
-            $notes = $video->notes()->where('user_id', $user->id)->get();
+            $notes = Notes::where('video_id', $video->id)->where('user_id', $user->id)->get();
         }
 
         // update views value

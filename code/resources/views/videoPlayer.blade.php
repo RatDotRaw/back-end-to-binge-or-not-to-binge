@@ -31,29 +31,32 @@
         <hr>
         <div> {{-- notes, only shown when the user is logged in --}}
             @if($user) {{-- if user is logged in --}}
-                <form action="{{ route('video.addNote') }}" method="post">
+                <h1>Notes</h1>
+                <p>add a note to the video</p>
+                <form action="{{ route('note.saveNote') }}" method="post">
                     @csrf
                     <input type="hidden" name="video_id" value="{{ $video->id }}">
-                    <input type="text" name="note" placeholder="note">
+                    <input type="text" name="content" placeholder="note">
                     <button type="submit">add note</button>
                 </form>
             @endif
             @if(count($notes) != 0)
-                dd($notes);
-                <h1>Your notes</h1>
+                <br>
+                <h2>Your notes:</h2>
                 <div class="row">
                     @foreach($notes as $note)
                         {{-- mini form to edit notes --}}
-                        <form action="{{ route('video.editNote') }}" method="post">
+                        <form action="{{ route('note.updateNote') }}" method="post">
                             @csrf
                             <input type="hidden" name="note_id" value="{{ $note->id }}">
-                            <input type="text" name="note" value="{{ $note->note }}">
-                            <button type="submit">edit</button>
+                            <input type="text" name="note" value="{{ $note->content }}">
+                            <button type="submit">update</button>
                         </form>
                     @endforeach
                 </div>
-                <hr>
+                <br><hr>
             @endif
+            <hr>
         </div>
         <h1>More video's for you to watch</h1>
         @foreach($randomVideos as $video)

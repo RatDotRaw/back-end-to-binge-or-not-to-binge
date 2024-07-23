@@ -72,5 +72,6 @@ class VideoSeeder extends Seeder
         $user->name = 'John Doe';
         $user->email = 'user@user';
         $user->password = bcrypt('changeme');
+        $user->save();
     }
 }
