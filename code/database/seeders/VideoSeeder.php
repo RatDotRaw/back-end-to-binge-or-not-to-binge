@@ -66,5 +66,11 @@ class VideoSeeder extends Seeder
             // $videoModel->next_video_id = $video['next_video_id'];
             $videoModel->save();
         }
+
+        // insert dummy user
+        $user = new \App\Models\User();
+        $user->name = 'John Doe';
+        $user->email = 'user@user';
+        $user->password = bcrypt('changeme');
     }
 }

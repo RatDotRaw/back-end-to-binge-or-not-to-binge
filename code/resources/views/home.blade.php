@@ -24,9 +24,9 @@
                         <div>
                             <p class="title">{{ $video->title }}</p>
                             <p>{{ $video->description }}</p>
-                            <p>{{ $video->created_at }}</p>
+                            <p>uploaded on: {{ $video->created_at }}</p>
                             <div class="align-vertically">
-                                <p>spooky meter:</p>
+                                <p>handy meter:</p>
                                 <progress value="{{ $video->likes }}" max="{{ $video->likes + $video->dislikes }}"></progress>
                             </div>
                         </div>

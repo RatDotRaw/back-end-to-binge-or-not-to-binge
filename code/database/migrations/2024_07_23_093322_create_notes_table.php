@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_videos', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            // id of user
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // id of video
             $table->foreignId('video_id')->constrained()->onDelete('cascade');
-            // timestamp first time the video was shown
-            $table->timestamp('shown_at')->useCurrent();
-            $table->timestamps();
+            $table->text('content');
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_videos');
+        Schema::dropIfExists('notes');
     }
 };

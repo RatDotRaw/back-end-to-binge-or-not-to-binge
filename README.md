@@ -6,29 +6,29 @@
 ## Features
 - [ ] Develop a streaming site focused on DIY enthusiasts and hobbyists.
 - [ ] Implement a unique selling point (USP) - a feature not found on existing streaming services.
-- [ ] Embed videos hosted externally (e.g., Vimeo or YouTube) using iframes.
+- [x] Embed videos hosted externally (e.g., Vimeo or YouTube) using iframes.
 - [ ] Conduct a thorough analysis of the features to implement:
   - [ ] Dedicate sufficient time to this analysis before starting to code.
   - [ ] Utilize knowledge from other courses if applicable (e.g., design thinking, domain modeling).
   - [ ] Ensure a well-developed set of features to showcase your expertise. A basic Netflix clone is insufficient.
 - [ ] Think from the user's perspective and identify essential features:
   - [ ] Search by cast.
-  - [ ] Profile pages.
+  - [x] Profile pages.
   - [ ] Any other feature that enhances user experience.
 
 ## Technical Requirements
-- [ ] Use a MySQL database.
-- [ ] Apply correct relationship types in your database and code.
+- [x] Use a MySQL database.
+- [x] Apply correct relationship types in your database and code.
 - [ ] Follow best practices in Laravel as taught in the lessons.
 - [ ] Ensure sufficient depth in the project; a minimal MVC structure is not enough.
 - [ ] Maintain clean, readable, and efficient code to facilitate future modifications.
-- [ ] Provide a relevant error page for disallowed situations instead of letting the application crash.
+- [x] Provide a relevant error page for disallowed situations instead of letting the application crash.
 
 ## Submission Requirements
 - [ ] Submit a video demonstrating all features, explaining the implementation, and highlighting improvements since the first version.
 - [ ] Provide the repository link as a comment on Canvas, created using the provided Classroom link. The repository should contain:
   - [ ] An export of the database.
-  - [ ] A schema of the database.
+  - [x] A schema of the database.
 - [ ] Include a comment with the link to your live site.
 
 # features checklist:
@@ -45,7 +45,7 @@ video pagina:
 homepage:
 - [ ] - zoekbalk en filters
 - [x] - random video button
-- [x] - creepy pasta van de dag
+- [x] - handy video van de dag
 - [x] - popular sectie
 
 # Sources & documentation: 
@@ -89,4 +89,4 @@ The migrate:refresh command will roll back all of your migrations and then execu
 `php artisan db:seed`
 
 ### Run specific seeder
-`php artisan db:seed --class=SeederName`
+`php artisan db:seed --class=VideoSeeder`

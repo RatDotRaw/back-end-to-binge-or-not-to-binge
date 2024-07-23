@@ -44,8 +44,10 @@ class VideoController extends Controller
         }
 
         // check if user is logged in
+        $user = null;
         if (auth()->check()) {
             $user = auth()->user();
+            $authed = true;
 
             // get last viewed video and check if it is the same as current video
             $lastVideo = VideoHistory::where('user_id', $user->id)->orderBy('watched_at', 'desc')->first() ?? new VideoHistory();
@@ -58,6 +60,12 @@ class VideoController extends Controller
             }
         }
 
+        $notes = [];
+        if ($user) {
+            // get all notes for this video
+            $notes = $video->notes()->where('user_id', $user->id)->get();
+        }
+
         // update views value
         $video->views = $video->views + 1;
         $video->save();
@@ -67,7 +75,7 @@ class VideoController extends Controller
         // get random video's
         $randomVideos = $this->randomVideos(10);
 
-        return view('videoPlayer', ['video' => $video, 'randomVideos' => $randomVideos]);
+        return view('videoPlayer', ['video' => $video, 'randomVideos' => $randomVideos, 'user' => $user, 'notes' => $notes ?? []]);
     }
 
     function getDailyVideo() {
