@@ -10,17 +10,17 @@
             {{-- loop through all video's to then loop through all related notes --}}
             @foreach($videos as $video)
 
-                <li>
+                <div class="box">
                     <a href="{{ route('video.show', ['id' => $video->id]) }}"><h2>{{ $video->title }}</h2></a>
                     <ul>
                         @foreach($notes as $note)
                             @if($note->video_id == $video->id)
-                                <li>
+                                <div>
                                     {{-- mini form to edit notes --}}
                                     <form action="{{ route('note.updateNote') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="note_id" value="{{ $note->id }}">
-                                        <input type="text" name="note" value="{{ $note->content }}">
+                                        <textarea name="content" placeholder="empty notes will be deleted">{{ $note->content }}</textarea><br>
                                         <button type="submit">update</button>
                                     </form>
                                     {{-- mini form to delete notes --}}
@@ -29,11 +29,12 @@
                                         <input type="hidden" name="note_id" value="{{ $note->id }}">
                                         <button type="submit">delete</button>
                                     </form>
-                                </li>
+                                    <hr>
+                                </div>
                             @endif
                         @endforeach
                     </ul>
-                </li>
+                </div>
             @endforeach
         </ul>
     @else

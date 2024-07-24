@@ -36,7 +36,7 @@
                 <form action="{{ route('note.saveNote') }}" method="post">
                     @csrf
                     <input type="hidden" name="video_id" value="{{ $video->id }}">
-                    <input type="text" name="content" placeholder="note">
+                    <textarea name="content" placeholder="note"></textarea>
                     <button type="submit">add note</button>
                 </form>
             @endif
@@ -49,9 +49,9 @@
                         <form action="{{ route('note.updateNote') }}" method="post">
                             @csrf
                             <input type="hidden" name="note_id" value="{{ $note->id }}">
-                            <input type="text" name="note" value="{{ $note->content }}">
+                            <textarea name="content" placeholder="empty notes will be deleted">{{ $note->content }}</textarea><br>
                             <button type="submit">update</button>
-                        </form>
+                        </form><br>
                     @endforeach
                 </div>
                 <br><hr>

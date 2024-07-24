@@ -91,7 +91,6 @@ class NoteController extends Controller
 
 
         // get note
-
         $note = Notes::find($request->note_id);
         if (!$note) return redirect()->route('home')->with('error', 'Note not found with id: '. $request->note_id);
 
