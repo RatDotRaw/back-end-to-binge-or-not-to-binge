@@ -22,24 +22,28 @@ class VideoSeeder extends Seeder
                 'title' => 'MyHouse.WAD',
                 'description' => 'A map uploaded by an unknown user, with secrets hidden deep inside its walls...',
                 'url' => 'https://www.youtube.com/embed/5wAo54DHDY0?si=wpWerY1-0lRWFTv7',
+                'tools' => [1, 2, 3, 4, 5],
             ],
             [
                 'id' => 2,
                 'title' => 'The Spaghetti Monster — Creepypasta narrated',
                 'description' => 'The Spaghetti monster is the second part part of a creepypasta, horror, scary story.',
                 'url' => 'https://www.youtube.com/embed/j05GUKWzGmc?si=RXdjHwVyo0me1NBU',
+                'tools' => [1, 2, 3],
             ],
             [
                 'id' => 3,
                 'title' => 'Vita Carnis - Living Meat Research Documentary 1 - Intro and The Crawl',
                 'description' => 'Documentary of the Vita Carnis Species',
                 'url' => 'https://www.youtube.com/embed/xNc-jv3d2o0?si=kEn2qf9X_0EgQIO0',
+                'tools' => [1, 2],
             ],
             [
                 'id' => 4,
                 'title' => 'Vita Carnis - Living Meat Research Documentary 2 - Trimmings',
                 'description' => 'Documentary of the Vita Carnis Species',
                 'url' => 'https://www.youtube.com/embed/1vK0rZm4dyk?si=orkhpgOUIj3qVoQX',
+                'tools' => [1],
             ],
             [
                 'id' => 5,
@@ -65,13 +69,13 @@ class VideoSeeder extends Seeder
             $videoModel->url = $video['url'];
             // $videoModel->next_video_id = $video['next_video_id'];
             $videoModel->save();
+
+            // assign tools to video
+            if (isset($video['tools'])) {
+                $videoModel->tools()->attach($video['tools']);
+            }
         }
 
-        // insert dummy user
-        $user = new \App\Models\User();
-        $user->name = 'John Doe';
-        $user->email = 'user@user';
-        $user->password = bcrypt('changeme');
-        $user->save();
+
     }
 }

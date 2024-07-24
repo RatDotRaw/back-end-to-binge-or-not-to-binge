@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Tool extends Model
 {
     // use HasFactory;
-    public function tools() {
-        return $this->belongsToMany(Tool::class);
+    public function videos() {
+        return $this->belongsToMany(Video::class);
     }
 }

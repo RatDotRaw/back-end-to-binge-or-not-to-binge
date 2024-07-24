@@ -52,6 +52,8 @@ homepage:
 - https://laravel.com/docs/11.x
 - lesson materials
 - https://stackoverflow.com/questions/32485581/php-nested-loop-break-inner-loops-and-continue-the-main-loop
+- https://laravel.com/docs/5.0/eloquent?c=atila?c=atila#working-with-pivot-tables
+- https://medium.com/@prevailexcellent/laravel-many-to-many-relationship-complete-tutorial-16025acd5450
 
 ---
 
