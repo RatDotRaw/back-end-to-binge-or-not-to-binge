@@ -1,6 +1,33 @@
 > [!CAUTION]
 > DO NOT USE CODE IN ANY WAY IN PRODUCTION!
 
+# how to run:
+## requirements:
+- docker
+- docker-compose
+- git
+
+# .env file:
+if you want to use docker, the .env.example file is already usable.
+
+## host on docker:
+1. clone the repository
+2. run `docker-compose up -d`
+3. run `docker exec -it laravel bash`
+
+# seed database:
+The database does not get automatically seeded.
+Instead of doing a very complex way entering the docker container and doing all sorts of shenanigans.
+I was too tired to figure out how to do it properly, and I couldn't be bothered to do it the right way.
+
+1. go to [host]:8081 to the phpmyadmin page
+2. login with the following credentials:
+    - username: root
+    - password: password
+3. create a new database with the name you specified in the .env file
+4. go to the import tab and import the export.sql from database_export folder
+5. The database should now be seeded.
+
 # TODO
 
 ## Features
@@ -27,7 +54,7 @@
 ## Submission Requirements
 - [ ] Submit a video demonstrating all features, explaining the implementation, and highlighting improvements since the first version.
 - [ ] Provide the repository link as a comment on Canvas, created using the provided Classroom link. The repository should contain:
-  - [ ] An export of the database.
+  - [x] An export of the database.
   - [x] A schema of the database.
 - [ ] Include a comment with the link to your live site.
 

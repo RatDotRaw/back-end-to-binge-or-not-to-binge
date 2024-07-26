@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app
+    tty: true
+    stdin_open: true
+    ports:
+      - 80:80
+    container_name: laravel-app
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: changeme
+    volumes:
+      - mariadb-data:/var/lib/mysql
+
+  # used for seeding database with a database export file in ./database_export
+  # can be removed afterward
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - db
+
+volumes:
+  mariadb-data:
