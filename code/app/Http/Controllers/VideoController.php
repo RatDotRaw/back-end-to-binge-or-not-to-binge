@@ -38,11 +38,9 @@ class VideoController extends Controller
     }
     function show($id)
     {
-        $video = Video::find($id);
+        $video = Video::With('tools')->find($id);
 
-        if (!$video) {
-            return redirect()->route('home')->with('error', 'Video not found with id: '. $id);
-        }
+        if (!$video) return redirect()->route('home')->with('error', 'Video not found with id: '. $id);
 
         // check if user is logged in
         $user = null;
@@ -61,11 +59,13 @@ class VideoController extends Controller
             }
         }
 
+        // get all notes for this video
         $notes = [];
-        if ($user) {
-            // get all notes for this video
-            $notes = Notes::where('video_id', $video->id)->where('user_id', $user->id)->get();
-        }
+        if ($user) $notes = Notes::where('video_id', $video->id)->where('user_id', $user->id)->get();
+
+        // get all tools for this video
+
+
 
         // update views value
         $video->views = $video->views + 1;
@@ -75,6 +75,9 @@ class VideoController extends Controller
 
         // get random video's
         $randomVideos = $this->randomVideos(10);
+        foreach ($randomVideos as $video) {
+            $video->url = $this->makeIframe($video->url);
+        }
 
         return view('videoPlayer', ['video' => $video, 'randomVideos' => $randomVideos, 'user' => $user, 'notes' => $notes ?? []]);
     }

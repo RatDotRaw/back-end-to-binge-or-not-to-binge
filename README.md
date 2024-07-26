@@ -8,13 +8,13 @@
 - [ ] Implement a unique selling point (USP) - a feature not found on existing streaming services.
 - [x] Embed videos hosted externally (e.g., Vimeo or YouTube) using iframes.
 - [ ] Conduct a thorough analysis of the features to implement:
-  - [ ] Dedicate sufficient time to this analysis before starting to code.
-  - [ ] Utilize knowledge from other courses if applicable (e.g., design thinking, domain modeling).
+  - [x] Dedicate sufficient time to this analysis before starting to code.
+  - [x] Utilize knowledge from other courses if applicable (e.g., design thinking, domain modeling).
   - [ ] Ensure a well-developed set of features to showcase your expertise. A basic Netflix clone is insufficient.
 - [ ] Think from the user's perspective and identify essential features:
   - [ ] Search by cast.
   - [x] Profile pages.
-  - [ ] Any other feature that enhances user experience.
+  - [x] Any other feature that enhances user experience.
 
 ## Technical Requirements
 - [x] Use a MySQL database.
@@ -40,7 +40,8 @@ profielpagina:
 video pagina:
 - [x] - creepy meter
 - [x] - next/previous episode selection
-- [ ] - comment section???
+- [x] - personal notes
+- [x] - tools list
 
 homepage:
 - [ ] - zoekbalk en filters
@@ -54,7 +55,7 @@ homepage:
 - https://stackoverflow.com/questions/32485581/php-nested-loop-break-inner-loops-and-continue-the-main-loop
 - https://laravel.com/docs/5.0/eloquent?c=atila?c=atila#working-with-pivot-tables
 - https://medium.com/@prevailexcellent/laravel-many-to-many-relationship-complete-tutorial-16025acd5450
-
+- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 ---
 
 # notes
