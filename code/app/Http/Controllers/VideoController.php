@@ -75,8 +75,8 @@ class VideoController extends Controller
 
         // get random video's
         $randomVideos = $this->randomVideos(10);
-        foreach ($randomVideos as $video) {
-            $video->url = $this->makeIframe($video->url);
+        foreach ($randomVideos as $rVideo) {
+            $rVideo->url = $this->makeIframe($rVideo->url);
         }
 
         return view('videoPlayer', ['video' => $video, 'randomVideos' => $randomVideos, 'user' => $user, 'notes' => $notes ?? []]);

@@ -99,12 +99,12 @@ class NoteController extends Controller
         if ($note->user_id != $user->id) return redirect()->route('home')->with('error', 'You are not the owner of this note');
 
         // delete note if note is empty
-        if ($request->note == "") {
+        if ($request->content == "") {
             $note->delete();
             return redirect()->route('video.show', ['id' => $note->video_id]);
         } else {
             // update note
-            $note->content = $request->note;
+            $note->content = $request->content;
             $note->save();
             return redirect()->route('video.show', ['id' => $note->video_id]);
         }
