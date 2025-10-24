@@ -15,9 +15,9 @@
 
 ### Prepare A .env File:
 
-The project comes with an `.env.example`, it can be used as an example.
+The project comes with an `.env.example` in `./code`, it can be used as an example.
 
-If you want to use docker, renaming `.env.example` to `.env`. For demo purposes is this file already usable.
+If you just want to quickly demo the project, renaming `.env.example` to `.env` in  `./code` will do.
 
 ### host on docker:
 1. clone the repository
@@ -36,13 +36,14 @@ I was too tired to figure out how to do it properly, and I couldn't be bothered 
    - server: db
    - username: root
    - password: changeme
-3. create a new database with the name you specified in the .env file
-4. go to the import tab and import the export.sql from database_export folder
+3. create a new database with the name you specified in the .env file (`laravel` by default).
+4. go to the import tab and import the export.sql from `./database_export` folder
 5. The database should now be seeded with example data.
 
 ---
 
 > [!NOTE]
+> The readme ens here.
 > From here on, its some notes and whatnot I wrote back then.
 
 # TODO
