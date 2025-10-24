@@ -33,8 +33,9 @@ I was too tired to figure out how to do it properly, and I couldn't be bothered 
 
 1. go to [host]:8081 to the phpmyadmin page
 2. login with the following credentials:
-    - username: root
-    - password: password
+   - server: db
+   - username: root
+   - password: changeme
 3. create a new database with the name you specified in the .env file
 4. go to the import tab and import the export.sql from database_export folder
 5. The database should now be seeded with example data.
